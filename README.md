@@ -1,1 +1,1 @@
-# heuristicas-para-um-problema-NP-Dificil
+# Heurísticas para um problema NP-Difícil
