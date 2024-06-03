@@ -48,23 +48,13 @@ $(PROJ_NAME): $(OBJ)
 	$(CC) $< $(CC_FLAGS) -o $@
 	@ echo ' '
 
-./objects/algoritmos/%.o: ./src/algoritmos/%.c ./hdr/algoritmos/%.h
-	@ echo 'Construindo target usando o compilador GCC: $<'
-	$(CC) $< $(CC_FLAGS) -o $@
-	@ echo ' '
-
-./objects/estruturas/%.o: ./src/estruturas/%.c ./hdr/estruturas/%.h
-	@ echo 'Construindo target usando o compilador GCC: $<'
-	$(CC) $< $(CC_FLAGS) -o $@
-	@ echo ' '
-
 ./objects/main.o: ./main/main.c $(H_SOURCE)
 	@ echo 'Construindo target usando o compilador GCC: $<'
 	$(CC) $< $(CC_FLAGS) -o $@
 	@ echo ' '
 
 objFolder:
-	@ mkdir -p objects ./objects/algoritmos ./objects/estruturas
+	@ mkdir -p objects
 
 exeFolder:
 	@ mkdir -p exe ./exe/instancias
