@@ -20,7 +20,7 @@ CC=gcc
 CC_FLAGS=-c -W -Wall -pedantic
 
 # Comando utilizado como target do clean
-RM = rm -rf
+RM = rm -f
 
 #########################
 # Compilação e linkagem #

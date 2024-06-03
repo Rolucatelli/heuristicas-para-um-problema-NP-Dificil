@@ -1,5 +1,5 @@
-#ifndef BUSCALOCAL_H
-#define BUSCALOCAL_H
+#ifndef EVOLUTIVA_H
+#define EVOLUTIVA_H
 
 #include "grasp.h"
 
@@ -11,6 +11,6 @@
  * @param s Solução a ser melhorada
  * 
 */
-void BuscaLocal(int *elements, int N, solution *s);
+void evolutiva(int *elements, int N, solution *s);
 
-#endif // BUSCALOCAL_H
+#endif // EVOLUTIVA_H
