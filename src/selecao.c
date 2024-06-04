@@ -23,7 +23,7 @@ void selection(solution *populacao, int individuos, int N)
         aptos[i].cost = -1;
     }
 
-    // Adiciona as soluções aptas ao vetor
+    // Adiciona as soluções aptas ao vetor, ou seja, as que tem custo menor ou igual a média
     int index = 0;
     for (int i = 0; i < individuos; i++)
     {
