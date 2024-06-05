@@ -91,7 +91,7 @@ int main()
 
             GRASP(elements, N, GRASPmax, &s); // Executa o GRASP
 
-            printf("Solução final:\n");
+            printf("\nSolução final:\n\n");
             printSolution(&s, N, elements);
             break;
         case 2:
@@ -100,7 +100,7 @@ int main()
 
             evolutiva(elements, N, &s); // Executa a busca evolutiva
 
-            printf("Solução final:\n");
+            printf("\nSolução final:\n\n");
             printSolution(&s, N, elements);
             break;
         case 3:
@@ -177,5 +177,5 @@ void printSolution(solution *s, int N, int *elements)
         }
         printf("\n");
     }
-    printf("Custo final: %d\n", s->cost);
+    printf("Custo final: %d\n\n", s->cost);
 }

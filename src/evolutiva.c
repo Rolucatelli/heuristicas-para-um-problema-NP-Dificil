@@ -86,7 +86,7 @@ void evolutiva(int *elements, int N, solution *s)
         }
     } while (!encerrar);
 
-    printf("Número de gerações: %d\n", geracoes);
+    printf("\nNúmero de gerações: %d\n", geracoes);
 
     int best_cost = INT_MAX;
     // Encontra a melhor solução
