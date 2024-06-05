@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #include "../hdr/grasp.h"
 #include "../hdr/avaliacaocusto.h"
@@ -11,6 +12,7 @@
 
 void evolutiva(int *elements, int N, solution *s)
 {
+    clock_t start, end;
     int escolha, individuos, geracoes = 0, parada, encerrar = 0;
     do
     {
@@ -37,6 +39,7 @@ void evolutiva(int *elements, int N, solution *s)
 
     printf("Digite o número de indivíduos das gerações: ");
     scanf("%d", &individuos);
+    start = clock();
     solution *populacao = (solution *)malloc(individuos * sizeof(solution));
 
     // Inicializa a população
@@ -86,8 +89,6 @@ void evolutiva(int *elements, int N, solution *s)
         }
     } while (!encerrar);
 
-    printf("\nNúmero de gerações: %d\n", geracoes);
-
     int best_cost = INT_MAX;
     // Encontra a melhor solução
     for (int i = 0; i < individuos; i++)
@@ -109,4 +110,7 @@ void evolutiva(int *elements, int N, solution *s)
         free(populacao[i].partition);
     }
     free(populacao);
+    end = clock();
+    printf("\nNúmero de gerações: %d\n", geracoes);
+    printf("Tempo de execução: %f segundos\n", ((double)(end - start)) / CLOCKS_PER_SEC);
 }

@@ -17,6 +17,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 #include "../hdr/grasp.h"
 #include "../hdr/evolutiva.h"
@@ -25,6 +26,7 @@ int main()
 {
     srand(time(NULL)); // Inicializa a semente do gerador de números aleatórios
     system("clear");
+    clock_t start, end;
 
     // Abertura do arquivo
     char *nomeArquivo = (char *)malloc(100 * sizeof(char));
@@ -88,11 +90,14 @@ int main()
 
             printf("Digite o número máximo de iterações: ");
             scanf("%d", &GRASPmax);
-
+            
+            start = clock();
             GRASP(elements, N, GRASPmax, &s); // Executa o GRASP
+            end = clock();
 
             printf("\nSolução final:\n\n");
             printSolution(&s, N, elements);
+            printf("Tempo de execução: %f segundos\n", (double)(end - start) / CLOCKS_PER_SEC);
             break;
         case 2:
 
